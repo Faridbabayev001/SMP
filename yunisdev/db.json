@@ -7,15 +7,22 @@
             "email": "farid.b@code.edu.az",
             "password": "farid123"
         },
-          {
+        {
             "id": 2,
             "name": "Murad",
             "surname": "Mikayilzada",
             "email": "m.murad@code.edu.az",
             "password": "123456789"
+        },
+        {
+            "id": 3,
+            "name": "Yunis",
+            "surname": "Huseynzade",
+            "email": "yunisdev.04@gmail.com",
+            "password": "yunis2004"
         }
     ],
-    "admins" : [
+    "admins": [
         {
             "id": 1,
             "name": "Admin",
