@@ -17,7 +17,9 @@ if __name__ == "__main__":
                 elif cmd == 'showall':
                     methods.showall()
                 elif cmd == 'update':
-                    methods.update():
+                    methods.update()
                 elif cmd == 'exit':
                     exit()
+                else:
+                    print('Command not found.')
             break
