@@ -1,5 +1,4 @@
-from db import get_last_id, add_student_to_db, remove_student_from_db
-
+from db import *
 
 class StudentSchema:
     def __init__(self, _name, _surname, _email, _password,):
@@ -23,6 +22,15 @@ def create_student(inputs):
 
 def remove_student(_id):
     remove_student_from_db(_id)
+
+def get_student(_id):
+    get_student_from_db(_id)
+
+def get_all():
+    get_students_from_db()
+
+def get_student_data(_id):
+    return get_student_data_from_db(_id)
 
 if __name__ == "__main__":
     print('This is module file and cannot run.')

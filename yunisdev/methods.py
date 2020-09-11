@@ -1,6 +1,7 @@
 import auth
 import student
 import db
+from tabulate import tabulate
 
 def getInput(*datas, asDict=True):
     if asDict:
@@ -17,22 +18,38 @@ def login():
         print('Try again')
 
 
-def create():
-    data = getInput('name', 'surname', 'email', 'password',asDict=False)
-    student.create_student(data)
+def create(authRole):
+    if authRole == "admin":
+        data = getInput('name', 'surname', 'email', 'password',asDict=False)
+        student.create_student(data)
+    else:
+        print('You do not have permission to do this operation')
 
 
-def remove():
-    data = getInput('id')
-    student.remove_student(data["id"])
+def remove(authRole):
+    if authRole == "admin":
+        data = getInput('id')
+        student.remove_student(data["id"])
+    else:
+        print('You do not have permission to do this operation')
 
 def show():
-    pass
+    data = getInput('id')
+    student.get_student(data["id"])
 
 
 def showall():
-    pass
+    student.get_all()
 
 
-def update():
-    pass
+def update(authRole):
+    if authRole == "admin":
+        data = getInput('id')
+        st = student.get_student_data(data["id"])
+        changeData = getInput("id","name","surname","email","password")
+        student.update_student(st)
+    else:
+        print('You do not have permission to do this operation')
+
+def print_as_table(tabledata,head=["ID","Name","Surname","Email","Password"]):
+    print(tabulate(tabledata, headers=head))
