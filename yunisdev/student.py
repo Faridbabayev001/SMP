@@ -32,5 +32,8 @@ def get_all():
 def get_student_data(_id):
     return get_student_data_from_db(_id)
 
+def update_student(st):
+    update_student_on_db(st)
+
 if __name__ == "__main__":
     print('This is module file and cannot run.')

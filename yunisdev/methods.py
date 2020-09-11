@@ -5,9 +5,9 @@ from tabulate import tabulate
 
 def getInput(*datas, asDict=True):
     if asDict:
-        return {data: input(f'Enter {data}: ') for data in datas}
+        return {data: input(f'Enter {data}: ') or "" for data in datas}
     else:
-        return [input(f'Enter {data}: ') for data in datas]
+        return [input(f'Enter {data}: ') or "" for data in datas]
 
 
 def login():
@@ -46,7 +46,15 @@ def update(authRole):
     if authRole == "admin":
         data = getInput('id')
         st = student.get_student_data(data["id"])
-        changeData = getInput("id","name","surname","email","password")
+        changeData = getInput(
+                                f"name ({st['name']})",
+                                f"surname ({st['surname']})",
+                                f"email ({st['email']})",
+                                f"password ({st['password']})"
+        )
+        for i in ['name','surname','email','password']:
+            if len(changeData[i+f" ({st[i]})"])>0:
+                st[i]=changeData[i+f" ({st[i]})"]
         student.update_student(st)
     else:
         print('You do not have permission to do this operation')

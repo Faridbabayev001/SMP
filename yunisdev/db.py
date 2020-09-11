@@ -38,7 +38,9 @@ def get_student_from_db(_id):
     data = load_data()["students"]
     for i in data:
         if i["id"]==int(_id):
-            if auth.auth["id"]==i["id"]:
+            if auth.auth["role"]=="admin":
+                tableData.append([i["id"],i["name"],i["surname"],i["email"],i["password"]])
+            elif auth.auth["id"]==i["id"]:
                 tableData.append([i["id"],i["name"],i["surname"],i["email"],i["password"]])
             else:
                 tableData.append([i["id"],i["name"],i["surname"],i["email"],"<hidden>"])
@@ -61,6 +63,14 @@ def get_student_data_from_db(_id):
     for i in data:
         if i["id"]==int(_id):
             return i
+
+def update_student_on_db(st):
+    data = load_data()
+    for i in range(len(data["students"])):
+        if data["students"][i]["id"]==st["id"]:
+            data["students"][i] = st
+    save_data(data)
+    print('Updated student')
 
 if __name__ == "__main__":
     print('This is module file and cannot run.')
