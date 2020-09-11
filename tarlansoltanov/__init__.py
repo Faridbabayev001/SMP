@@ -11,7 +11,7 @@ def run():
     operation = input("Please enter operation number : ")
     while operation != "0":
         if operation == "1":
-            Login()
+            login()
         else:
             print("Operation number is incorrect!")
         print(info)

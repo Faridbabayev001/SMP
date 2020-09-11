@@ -1,14 +1,14 @@
 from tarlansoltanov.db import *
-from tarlansoltanov.validations import valid_input
+from tarlansoltanov.validations import valid_input, checkexit
 import tarlansoltanov.validations as valid
 from tarlansoltanov.system import System
 
 
-def Login():
+def login():
     print("--------Login--------")
     user = getUserData()
     if user != None:
-        System(*user)
+        system(*user)
 
 
 def getUserData():
@@ -30,8 +30,7 @@ def getUserData():
             break
         print("This email is not in system.\nPlease type correct email!\n")
         email = valid_input("email", validations=[valid.empty])
-    if email == "exit":
-        print("----Going Back----")
+    if checkexit(email, "exit") == -1:
         return None
     password = valid_input("password", validations=[valid.empty])
     while password != "exit":
@@ -41,6 +40,5 @@ def getUserData():
         print("This password is not in correct.\nPlease type correct password!\n")
         password = valid_input("password", validations=[
                                valid.empty, valid.password])
-    if password == "exit":
-        print("----Going Back----")
+    if checkexit(password, "exit") == -1:
         return None

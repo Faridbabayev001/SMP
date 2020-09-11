@@ -17,43 +17,21 @@ def showAllStudents():
         showInfo(student)
 
 
-def showStudentWithId():
+def showStudent(arg):
     userInfo = None
     print("Please type exit for go back.\n")
-    id = valid_input("id", validations=[valid.empty])
-    while id != "exit":
+    check = valid_input(arg, validations=[valid.empty])
+    while check != "exit":
         for i in range(len(students)):
             student = students[i]
-            if str(student['id']) == id:
+            if str(student[arg]) == check:
                 userInfo = i
                 break
         if userInfo != None:
             break
-        print("This id is not in system.\nPlease type correct id!\n")
-        id = valid_input("id", validations=[valid.empty])
-    if id == "exit":
-        print("----Going Back----")
-        return None
-    showInfo(students[userInfo])
-    return userInfo
-
-
-def showStudentWithEmail():
-    userInfo = None
-    print("Please type exit for go back.\n")
-    email = valid_input("email", validations=[valid.empty])
-    while email != "exit":
-        for i in range(len(students)):
-            student = students[i]
-            if student['email'] == email:
-                userInfo = i
-                break
-        if userInfo != None:
-            break
-        print("This email is not in system.\nPlease type correct email!\n")
-        email = valid_input("email", validations=[valid.empty])
-    if email == "exit":
-        print("----Going Back----")
+        print(f"This {arg} is not in system.\nPlease type correct {arg}!\n")
+        check = valid_input(arg, validations=[valid.empty])
+    if checkexit(check, "exit") == -1:
         return None
     showInfo(students[userInfo])
     return userInfo
@@ -70,12 +48,12 @@ def changeUser():
     operation = input("Please enter operation number : ")
     while operation != "0":
         if operation == "1":
-            i = showStudentWithId()
+            i = showStudent('id')
         elif operation == "2":
-            i = showStudentWithEmail()
+            i = showStudent('email')
         else:
             print("Operation number is incorrect!")
-        if i!= None:
+        if i != None:
             userData = getUserData()
             students[i]['name'] = userData[0]
             students[i]['surname'] = userData[1]
@@ -84,6 +62,8 @@ def changeUser():
             break
         print(info)
         operation = input("Please enter operation number : ")
+    if checkexit(operation, "0") == -1:
+        return None
     print("User Data Changed Successfully!")
     addToDb(db)
 
@@ -99,12 +79,12 @@ def deleteUser():
     operation = input("Please enter operation number : ")
     while operation != "0":
         if operation == "1":
-            i = showStudentWithId()
+            i = showStudent("id")
         elif operation == "2":
-            i = showStudentWithId()
+            i = showStudent("email")
         else:
             print("Operation number is incorrect!")
-        if i!= None:
+        if i != None:
             del students[i]
             break
         print(info)

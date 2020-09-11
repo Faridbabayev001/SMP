@@ -61,3 +61,9 @@ def valid_input(out, validations=[]):
     while valid(txt, validations) == False:
         txt = input(f'{out.capitalize()} : ')
     return txt
+
+
+def checkexit(txt, x):
+    if txt == x:
+        print("----Going Back----")
+        return -1

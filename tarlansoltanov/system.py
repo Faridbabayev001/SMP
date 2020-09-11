@@ -2,14 +2,14 @@ from tarlansoltanov.func import *
 from tarlansoltanov.register import *
 
 
-def System(user, role):
+def system(user, role):
     if role == 'student':
-        StudentSystem(user)
+        studentSystem(user)
     elif role == 'admin':
-        AdminSystem(user)
+        adminSystem(user)
 
 
-def StudentSystem(user):
+def studentSystem(user):
     print("\nYou Logged In as Student.")
     systemInfo = """
     0. Log out
@@ -25,9 +25,9 @@ def StudentSystem(user):
         elif oper == "2":
             showAllStudents()
         elif oper == "3":
-            showStudentWithId()
+            showStudent('id')
         elif oper == "4":
-            showStudentWithEmail()
+            showStudent('email')
         else:
             print("Please type correct operation!")
         print(systemInfo)
@@ -36,7 +36,7 @@ def StudentSystem(user):
     print("Logging out......")
 
 
-def AdminSystem(user):
+def adminSystem(user):
     print("\nYou Logged In as Admin.")
     systemInfo = """
     0. Log out
@@ -51,15 +51,15 @@ def AdminSystem(user):
     oper = input("Please select operation : ")
     while oper != "0":
         if oper == "1":
-            showInfo(user)
+            showInfo(user, me=1)
         elif oper == "2":
             showAllStudents()
         elif oper == "3":
-            showStudentWithId()
+            showStudent('id')
         elif oper == "4":
-            showStudentWithEmail()
+            showStudent('email')
         elif oper == "5":
-            Register()
+            register()
         elif oper == "6":
             changeUser()
         elif oper == "7":
