@@ -1,6 +1,6 @@
-# import farid module
-import farid.main as farid
+# import tarlansoltanov module
+import tarlansoltanov
 
 
-# run farid module
-farid.run()
+# run tarlansoltanov module
+tarlansoltanov.run()
