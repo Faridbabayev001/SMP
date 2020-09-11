@@ -1,40 +1,27 @@
 {
-    "students": [{
-        "id": 2,
-        "name": "Example",
-        "surname": "Example",
-        "email": "example@murad.az",
-        "password": "murad123"
-    }, {
-        "name": "Tarlan",
-        "surname": "Soltanov",
-        "email": "example@example.az",
-        "password": "123456789",
-        "id": 3
-    }, {
-        "name": "Rubabe",
-        "surname": "Sabanova",
-        "email": "ruby256@example.az",
-        "password": "123456789",
-        "id": 4
-    }],
-    "admins": [{
-        "id": 1,
-        "name": "Admin",
-        "surname": "Admin",
-        "email": "admin@example.com",
-        "password": "admin123"
-    }, {
-        "name": "Tarlan",
-        "surname": "Soltanov",
-        "email": "admin1@example.com",
-        "password": "123456789",
-        "id": 2
-    }, {
-        "name": "Rubabe",
-        "surname": "Sabanova",
-        "email": "ruby@example.az",
-        "password": "123456789",
-        "id": 3
-    }]
+    "students": [
+        {
+            "id": 1,
+            "name": "Farid",
+            "surname": "Babayev",
+            "email": "farid.b@code.edu.az",
+            "password": "farid123"
+        },
+          {
+            "id": 2,
+            "name": "Murad",
+            "surname": "Mikayilzada",
+            "email": "m.murad@code.edu.az",
+            "password": "123456789"
+        }
+    ],
+    "admins" : [
+        {
+            "id": 1,
+            "name": "Admin",
+            "surname": "Admin",
+            "email": "admin@example.com",
+            "password": "admin123"
+        }
+    ]
 }
