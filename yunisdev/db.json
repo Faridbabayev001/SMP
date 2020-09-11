@@ -1,0 +1,27 @@
+{
+    "students": [
+        {
+            "id": 1,
+            "name": "Farid",
+            "surname": "Babayev",
+            "email": "farid.b@code.edu.az",
+            "password": "farid123"
+        },
+          {
+            "id": 2,
+            "name": "Murad",
+            "surname": "Mikayilzada",
+            "email": "m.murad@code.edu.az",
+            "password": "123456789"
+        }
+    ],
+    "admins" : [
+        {
+            "id": 1,
+            "name": "Admin",
+            "surname": "Admin",
+            "email": "admin@example.com",
+            "password": "admin123"
+        }
+    ]
+}
