@@ -44,7 +44,7 @@ def adminSystem(user):
     2. Show all students
     3. Show student info with id
     4. Show student info with email
-    5. Add student
+    5. Add student or admin
     6. Change student
     7. Delete student\n"""
     print(systemInfo)

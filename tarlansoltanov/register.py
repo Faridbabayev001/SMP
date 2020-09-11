@@ -59,11 +59,13 @@ def getUserType():
             elif type == "2":
                 userInfo.append('admin')
             User(*userInfo).dictToDb()
-            print("User added to system succesfully!\n Please login with this account!\n")
+            print("User added to system succesfully!\n")
             break
         else:
             print("Please type valid user type number!")
         print(typeInfo)
         type = input("Please select user type : ")
-    if checkexit(type, "0") == -1 or checkexit(userInfo, None) == -1:
+    if checkexit(type, "0") == -1:
+        return -1
+    if checkexit(userInfo, None) == -1:
         return -1

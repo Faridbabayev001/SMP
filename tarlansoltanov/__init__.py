@@ -1,4 +1,4 @@
-from tarlansoltanov.login import Login
+from tarlansoltanov.login import login
 
 
 def run():

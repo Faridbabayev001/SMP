@@ -1,7 +1,7 @@
 from tarlansoltanov.db import *
 from tarlansoltanov.validations import valid_input, checkexit
 import tarlansoltanov.validations as valid
-from tarlansoltanov.system import System
+from tarlansoltanov.system import system
 
 
 def login():

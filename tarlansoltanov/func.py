@@ -44,7 +44,7 @@ def changeUser():
     2. Change student with email
     """
     print(info)
-    student = None
+    i = None
     operation = input("Please enter operation number : ")
     while operation != "0":
         if operation == "1":

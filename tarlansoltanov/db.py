@@ -30,7 +30,10 @@ class User:
         myDict['email'] = self.email
         myDict['password'] = self.password
         if self.role == 'student':
-            myDict['id'] = students[len(students)-1]['id']+1
+            if len(students)==0:
+                myDict['id'] = 1
+            else:
+                myDict['id'] = students[len(students)-1]['id']+1
             students.append(myDict)
         else:
             myDict['id'] = admins[len(admins)-1]['id']+1
